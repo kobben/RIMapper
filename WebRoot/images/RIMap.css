@@ -1,0 +1,43 @@
+.normal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.small {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #0000CC;
+	text-decoration: none;
+}
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #0000CC;
+	text-decoration: underline;
+}
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.Heading1 {
+	font-size: 24px;
+	line-height: 40px;
+	font-weight: normal;
+	background-color: #EEEEEE;
+	color: #000000;
+	height: auto;
+	width: auto;
+	font-variant: normal;
+	padding: 10px;
+	margin: 0px;
+	background-position: left top;
+	font-family: "Lucida Sans", Verdana, Arial, sans-serif;
+
+
+
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}

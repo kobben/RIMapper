@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!-- NOTE: 
+  ** RIMapperWMS / TimeMapper 1.1 - February 2012 **
+  1 RIMapper web-app + 1 database = 1 WMS instance
+  This WMSCapabilities XML is built from a template by the RIMapperWMS 
+  server application, providing the capabilities of this specific 
+	RIMapperWMS instance. 
+	The capabilities are based on the setup and configuration found 
+	in the SFS database provided...-->
+<WMT_MS_Capabilities version="1.1.1" updateSequence="0">
+	<Service>
+		<Name>Name</Name>
+		<Title>Title</Title>
+		<Abstract>Abstract</Abstract>
+		<KeywordList></KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+			xlink:type="simple" xlink:href="http://hostname" />
+		<ContactInformation>
+			<ContactElectronicMailAddress>
+				ContactElectronicMailAddress
+			</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>fees</Fees>
+		<AccessConstraints>accessconstraint</AccessConstraints>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource
+								xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+								xlink:href="http://hostname:port/path" />
+						</Get>
+						<Post>
+							<OnlineResource
+								xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+								xlink:href="http://hostname:port/path" />
+						</Post>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/svg+xml</Format>
+				<Format>image/png</Format>
+				<Format>image/jpeg</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource
+								xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+								xlink:href="http://hostname:port/path" />
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+		</Exception>
+		<VendorSpecificCapabilities />
+		<UserDefinedSymbolization SupportSLD="0" UserLayer="0"
+			UserStyle="0" RemoteWFS="0" /><Layer>
+			<Title>ParentLayer</Title>
+</Layer>
+	</Capability>
+</WMT_MS_Capabilities>

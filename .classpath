@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-codec.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-dom.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-ext.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-extension.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-gvt.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-parser.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-script.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-svg-dom.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-svggen.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-transcoder.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/kobben/Documents/BEWAARMAP/Dev/batik-1.7/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-util.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-xml.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/pdf-transcoder.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xalan-2.6.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xerces_2_5_0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xml-apis-ext.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-anim.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-awt-util.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-bridge.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-css.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-gui-util.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/batik-swing.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jts-1.12.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/kobben/Documents/BEWAARMAP/Dev/jts-1.12/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-3.1.13-bin.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/postgresql-9.1-901.jdbc4.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

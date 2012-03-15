@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Define WMS Instance</title>
+  </head>
+  <body>
+    <h4>
+      This is an app to create a
+      <i>WMS instance</i> settings file for RIMapperWMS.
+    </h4>
+    <p>
+      RIMapperWMS can be installed as multiple WMS 'instances': Each instance
+      will be created by installing a copy of the RIMapperWMS servlets as a web
+      application in your servlet container. In most Java servlet containers,
+      this would be a seperate folder in the
+      <tt>webapps</tt> directory. In each webapp a
+      <tt>wms_instance.xml</tt> file defines the DB connection this instance
+      will use.
+
+    </p>
+    <p>
+      As an example, when the demo from the download is installed in the TomCat
+      directory
+      <tt>webapps/RIMapper/</tt>, the
+      <tt>wms_instance.xml</tt> in that directory will use PostGIS as its
+      Spatial Feature Server. It will connect to a DB 'rimapper' (created by the
+      load script included in the download), as user 'rimapper' with password
+      'rimapper'. When changing or adding DB priviliges and/or users for the
+      RIMapper DB, you'll have to change these settings accordingly!
+    </p>
+    <p>
+      For now, we only include this small utility to generate the xml file <b> client-side</b>.
+      We do <b>NOT</b> support writing the wms_instance.xml file server-side, for obvious security reasons. 
+      Just generate the XML, then copy and paste into the actual wms_instance.xml file (in the WebRoot folder)...
+    </p>
+
+    <form name="makeXML" method="get" action="wms_instance.jsp">
+      <table>
+        <tr>
+          <td width="147">
+            Spatial Feature Server:
+          </td>
+          <td width="625">
+
+							<select name="mySFS" id="getGUI">
+								<option value="PostGIS" selected>
+									PostGIS
+								</option>
+								<option value="MySQL">
+									MySQL
+								</option>
+							</select>
+          </td>
+        <tr>
+          <td>
+            Database:
+          </td>
+          <td>
+            <input name="myDB" value="" size="16" maxlength="64" />
+            = name of database
+          </td>
+        <tr>
+          <td>
+            Username:
+          </td>
+          <td>
+            <input name="myUN" value="" size="16" maxlength="64" />
+            = database user for instance (advice: do not use root un/pw!)
+          </td>
+        <tr>
+          <td>
+            Password:
+          </td>
+          <td>
+            <input name="myPW" value="" size="16" maxlength="64" />
+            = password for user (enter in plain text, will be encrypted in file)
+          </td>
+      </table>
+      <input type="Submit" name="Submit" value="Create 'wms_instance.xml'" />
+    </form>
+    <p>
+      
+  </body>
+</html>

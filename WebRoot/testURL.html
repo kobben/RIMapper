@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head> 
+
+		<title>RIMapperWMS/TimeMapper test page</title>
+		<link href="images/RIMap.css" rel="stylesheet" type="text/css">
+
+		<style type="text/css">
+<!--
+.show {
+	display: inline
+}
+
+.noshow {
+	display: none
+}
+-->
+</style>
+		<script language="JavaScript" type="text/javascript">
+			function getCapabilities() {
+					document.getElementById("getMapForm").setAttribute("class","noshow");
+					document.getElementById("getCapabilitiesForm").setAttribute("class","show");
+			}
+					
+		function getMap() {
+					document.getElementById("getMapForm").setAttribute("class","show");
+					document.getElementById("getCapabilitiesForm").setAttribute("class","noshow");
+			}
+										
+		function doPreset(num) {
+				//first empty
+				document.getElementById("SRS").setAttribute("value","");
+				document.getElementById("BBOX").setAttribute("value","");
+				document.getElementById("WIDTH").setAttribute("value","");
+				document.getElementById("HEIGHT").setAttribute("value","");
+				document.getElementById("LAYERS").setAttribute("value","");
+				document.getElementById("STYLES").setAttribute("value","");
+				document.getElementById("TIME").setAttribute("value","");
+				var srs = new Array("EPSG:32645","EPSG:4326","EPSG:4326","EPSG:3031","EPSG:4326","");
+				var bbox = new Array("332520,3065146,332963,3065694","-180,-90,180,90","-45,-22.5,45,22.5","-4000000,0,0,4000000","-1,-1,13,5","");
+				var width = new Array("443","800","800","800","700","");
+				var height = new Array("548","400","400","800","300","");
+				var layers= new Array("wardboundary,buildingblocks,river,roads","countries","BMNG,countries","nsidc.org basemap,icebergs","test,test","");
+			  var styles = new Array("defStyle,eqvuln,riverbanks,defArea","countries","default,countries","default,icebergs_anim","test,test_anim","");
+				var time = new Array("","","","2000-01-01/2008-12-31","2000-01-03/2000-01-07", "");
+				document.getElementById("SRS").setAttribute("value",srs[num]);
+				document.getElementById("BBOX").setAttribute("value",bbox[num]);
+				document.getElementById("WIDTH").setAttribute("value",width[num]);
+				document.getElementById("HEIGHT").setAttribute("value",height[num]);
+				document.getElementById("LAYERS").setAttribute("value",layers[num]);
+				document.getElementById("STYLES").setAttribute("value",styles[num]);
+				document.getElementById("TIME").setAttribute("value",time[num]);
+			}
+				
+		</script>
+
+	</head>
+	<body>
+		<h2 class="Heading1"><a href="index.jsp" ><img src="images/home.png" width="32" height="32" hspace="5" vspace="0" align="top" border="0"/></a>
+			RIMapperWMS / TimeMapper test page (1.1)
+		</h2>
+			<table>
+				
+				<tr>
+					<td>
+						REQUEST
+					</td>
+					<td>
+						<select name="REQUEST" id="select3">
+							<option value="GetMap" selected onclick="getMap()">
+								GetMap
+							</option>
+							<option value="GetCapabilities" onclick="getCapabilities()">
+								GetCapabilities
+							</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<div id="getMapForm" class="show">
+			
+					<p class="small">
+						Presets:
+						<select onchange="doPreset(this.selectedIndex);">
+						<option >Kathmandu Ward map: building earthquake vulnerability</option>
+						<option >Simple world map</option>
+						<option >World map with cascaded WMS (use Identify tool to see URL)</option>
+						<option >Antarctica Icebergs animated</option>
+						<option >Simple animation test</option>
+						<option selected >MAKE YOUR OWN</option>
+						</select>
+					</p>
+		<form action="WMS" target="_blank">
+				<table>
+				<input name="REQUEST" type="hidden" value="GetMap" />
+				<tr>
+					<td>
+						SERVICE
+					</td>
+					<td>
+						<input name="SERVICE" type="text" size="50" value="WMS">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						VERSION
+					</td>
+					<td>
+						<input name="VERSION" type="text" size="50" value="1.1.1">
+					</td>
+				</tr>
+					<tr>
+						<td>
+							SRS
+						</td>
+						<td>
+							<input id="SRS" name="SRS" type="text" size="50" >
+						</td>
+					</tr>
+					<tr>
+						<td>
+							BBOX
+						</td>
+						<td>
+							<input id="BBOX" name="BBOX" type="text" size="50"
+								>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							FORMAT
+						</td>
+						<td>
+						
+							<select name="FORMAT" id="FORMAT" >
+								<option value="image/svg+xml" selected>
+									image/svg+xml
+								</option>
+								<option value="image/png" >
+									image/png
+								</option>
+								<option value="image/jpeg" >
+									image/jpeg
+								</option>
+							</select>
+							
+						</td>
+					</tr>
+					<tr>
+						<td>
+							WIDTH
+						</td>
+						<td>
+							<input name="WIDTH" id="WIDTH" type="text" size="50" >
+						</td>
+					</tr>
+					<tr>
+						<td>
+							HEIGHT
+						</td>
+						<td>
+							<input id="HEIGHT" name="HEIGHT" type="text" size="50">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							LAYERS
+						</td>
+						<td>
+							<input id="LAYERS" name="LAYERS" type="text" size="50"
+								>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							STYLES
+						</td>
+						<td>
+							<input id="STYLES" name="STYLES" type="text" size="50"
+								>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							TIME
+						</td>
+						<td>
+							<input id="TIME" name="TIME" type="text" size="50"
+								>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							EXCEPTIONS
+						</td>
+						<td>
+							<select name="EXCEPTIONS" id="EXCEPTIONS">
+								<option value="application/vnd.ogc.se_inimage" >
+									application/vnd.ogc.se_inimage
+								</option>
+								<option value="application/vnd.ogc.se_xml" selected>
+									application/vnd.ogc.se_xml
+								</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							getGUI
+						</td>
+						<td>
+							<select name="getGUI" id="getGUI">
+								<option value="true" selected>
+									true
+								</option>
+								<option value="false">
+									false
+								</option>
+							</select>
+							true = with SVG GUI
+						</td>
+					</tr>
+				<tr>
+					<td>
+						<input type="Submit" Name="Submit" value="SEND REQUEST">
+					</td>
+				</tr>
+
+			</table>
+		</form>
+		</div>
+			<div id="getCapabilitiesForm" class="noshow">
+			 
+		<form action="WMS" target="_blank">
+				<table>
+				<input name="REQUEST" type="hidden" value="GetCapabilities" />
+				<tr>
+					<td>
+						SERVICE
+					</td>
+					<td>
+						<input name="SERVICE" type="text" size="50" value="WMS">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						VERSION
+					</td>
+					<td>
+						<input name="VERSION" type="text" size="50" value="1.1.1">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="Submit" Name="Submit" value="SEND REQUEST" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div class="small">
+			To learn more, go to the <a href="index.jsp">RIMapper website</a>...
+			For the SVG maps you will need an SVG-capable browser:
+		<UL>
+			<li>
+				Native SVG renderers: FireFox 1.5+, Opera 9+, Safari 1.3+ (or Chrome and other browsers based on
+				WebKit), IE9+
+			</li>
+			<li>
+				or others using external libs: a Javascript library (eg.
+				SVGweb or Rafael) or the Adobe SVG viewer (IE plugin).
+			</li>
+		</UL>
+		Known issues and limitations:
+		<UL>
+			<LI>
+				Animation GUI TimeSlider only works in Opera and FireFox (basic animation works also in Safari and other WebKit based browsers).
+			</LI>
+			<LI>
+				Output formats other than SVG (png,jpeg) not possible in combination with GetGUI=true.
+			</LI>
+			<LI>
+				Extension to ISO 8601 [:1988(E)] not implemented: Only contiguous TIME periods (datetime_begin/datetime_end) for now.
+			</LI>
+			<LI>
+				External (cascaded) WMS layers are loaded in the background, without checking for succes or progress report
+				</LI>
+		</UL>
+		<hr align="center">
+
+      <div align="center"><span class="small"><a href="mailto:kobben@itc.nl">Barend
+            K&ouml;bben</a> - last changes February 2012
+  <span class="small"><br>
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Creative
+  Commons Attribution-NonCommercial-ShareAlike 2.5 License</a>.<br>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/"><img src="images/somerights20.png" alt="Creative Commons License" width="88" height="31" border="0"/></a> </span> </span></div></td>
+
+		</div>
+	</body>
+</html>

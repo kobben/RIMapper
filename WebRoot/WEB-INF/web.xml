@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ <servlet>
+  <display-name>RIMapper WMS servlet</display-name>
+  <servlet-name>WMS</servlet-name>
+  <servlet-class>nl.itc.RIMapper.WMS</servlet-class>
+  <init-param>
+   <param-name>listings</param-name>
+   <param-value>true</param-value>
+  </init-param>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>WMS</servlet-name>
+  <url-pattern>/WMS</url-pattern>
+ </servlet-mapping>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+</web-app>

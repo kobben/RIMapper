@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="RIMapper"
+  id="myeclipse.1285581028927"
+  context-root="/RIMapper"
+  j2ee-spec="5.0"
+  archive="RIMapper.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

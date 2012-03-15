@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding="UTF-8" standalone="yes" ?>
+<!-- NOTE: this wms_instance.xml provides DB connection data to the
+	RIMapperWMS server application.
+	1 database with the RIMapperWMS tables + 1 RIMapper webapp = 1 WMS instance-->
+<!--	admins can use web-form at admin/DefineWMSInstance.html-->
+<WMS>
+	<SFSserver>PostGIS</SFSserver>
+	<host>localhost</host>
+	<database>rimapper</database>
+	<username>rimapper</username>
+	<!--	password is encrypted using application provided encryption key-->
+	<password>rgSD6HVWpHhxKkZAVA9FlQ==</password>
+</WMS>
